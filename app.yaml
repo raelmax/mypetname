@@ -1,0 +1,17 @@
+application: gaemax
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /css
+  static_dir: static/css/
+
+- url: /imgs
+  static_dir: static/imgs/
+
+- url: /js
+  static_dir: static/js/
+
+- url: /.*
+  script: app/main.py
