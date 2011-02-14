@@ -1,4 +1,15 @@
 body {
   font-family: Verdana, Helvetica, sans-serif;
-  background-color: #DDDDDD;
+  background-color: #ddd;
+}
+a, img
+{ border:none; }
+
+#site{
+  text-align:center;
+  width:400px;
+  margin:0 auto;
+}
+form{
+  margin-bottom:50px;
 }

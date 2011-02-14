@@ -1,25 +1,48 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <title>MyPetName - Gerador de nome para animais</title>
   </head>
   <body>
-    <img src="/imgs/Catdog.png" alt="CatDog" /><br />
-    {% for greeting in greetings %}
-      {% if greeting.author %}
-        <strong>{{ greeting.author.nickname }}</strong> wrote:
-      {% else %}
-        <strong>An anonymous person</strong> wrote:
+    <div id="site">
+      <h1>
+        <a href="/" title="My Pet Name"><img src="/imgs/pets.png" alt="CatDog" /></a>
+      </h1>
+      {% if bicho %}
+      <p>
+        <span>Que tal:&nbsp;</span>
+        <strong>{{ bicho }}</strong>
+      </p>
       {% endif %}
-      <blockquote>{{ greeting.content|escape }}</blockquote>
-    {% endfor %}
-
-    <form action="/sign" method="post">
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-      <div><input type="submit" value="Sign Guestbook"></div>
-    </form>
-
-    <a href="{{ url }}">{{ url_linktext }}</a>
-
+      {% if bicho %}
+      <p>Se você não gostou, tente novamente!</p><br />
+      {% else %}
+      <p>Vamos lá, escolha um nome!</p>
+      {% endif %}
+      <form action="/" method="post">
+        <input id="id_macho" type="radio" name="sexo" value="macho" />
+        <label for="id_macho">Macho</label>
+        <input id="id_femea" type="radio" name="sexo" value="femea" />
+        <label for="id_femea">Fêmea</label>
+        <br />
+        <input type="submit" value="clique aqui para gerar outro nome" />
+      </form>
+      <a href="http://code.google.com/appengine">
+        <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" />
+      </a><br />
+      <a href="https://github.com/raelmax/mypetname">on github</a>
+    </div>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-18745352-4']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
   </body>
 </html>
 
